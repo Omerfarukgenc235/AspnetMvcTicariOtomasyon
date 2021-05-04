@@ -1,0 +1,33 @@
+﻿@model WebApplication1.Models.Siniflar.Cariler
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+<br />
+<h2>Deneme Alanı</h2>
+<br />
+@using (Html.BeginForm("Index", "CariPanel", FormMethod.Post))
+{
+    <table class="table table-bordered">
+        <tr>                    
+            <td><label>Mail Adresi : @HttpContext.Current.User.Identity.Name</label></td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(y => y.CariAd, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(x => x.CariSifre, new { @class = "form-control" })</td>
+        </tr>
+    </table>
+    <button class="btn btn-warning">Güncelle</button>
+}
